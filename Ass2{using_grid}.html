@@ -1,0 +1,73 @@
+ <!-- 1] Header ,Unequal columns, and footer ( using grid)*/ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     
+     <style>
+     *{
+         box-sizing: border-box;
+     }
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .header{
+         grid-area: header;
+         background-color: #eff5cc;
+         padding: 30px;
+         text-align: center;
+         font-size: 35px;
+    }
+    .grid-container {
+  display: grid;
+  grid-template-areas: 
+    'header header header header header header' 
+    'left middle middle middle middle right' 
+    'footer footer footer footer footer footer';
+ 
+} 
+ 
+    .left,.middle,.right{
+        padding: 10px;
+        height: 300px;
+    }
+    .left{ 
+        grid-area: left;
+    }
+    .middle{
+        grid-area: middle;
+    }
+    .right{
+        grid-area: right;
+    }
+    .footer {
+  grid-area: footer;
+  background-color: #cff79b;
+  padding: 10px;
+  text-align: center;
+}
+    @media (max-width: 600px) {
+  .grid-container  {
+    grid-template-areas: 
+      'header header header header header header' 
+      'left left left left left left' 
+      'middle middle middle middle middle middle' 
+      'right right right right right right' 
+      'footer footer footer footer footer footer';
+  }
+    }
+ 
+ </style>
+     <title>Document</title>
+ </head>
+ <body>
+     <div class="grid-container">
+     <div class="header"><h2>Header</h2>  </div>
+     <div class="left" style="background-color:rgb(248, 205, 245);">Column </div>
+     <div class="middle" style="background-color:rgb(224, 147, 218);"> Column</div>
+     <div class="right" style="background-color:rgb(192, 133, 192);"> Column</div>
+    <div class="footer">
+        <p>Footer</p>
+    </div>
+     </div>
+ </body>
+ </html>
